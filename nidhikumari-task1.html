@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON File Transformer</title>
+  <style>
+
+  
+  body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  #fileInput {
+    margin-bottom: 20px;
+  }
+
+  #output {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+  }
+
+</style>
+  </head>
+</head>
+<body>
+  <h1>JSON Transformer</h1>
+  <input type="file" id="fileInput" accept=".json">
+  <button id="transformButton">Transform your JSON FILE</button>
+  <pre id="output"></pre>
+  
+  <script>
+    document.getElementById('transformButton').addEventListener('click', () => {
+      const fileInput = document.getElementById('fileInput');
+      const output = document.getElementById('output');
+
+      if (fileInput.files.length === 0) {
+        alert('Please select a JSON file');
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        try {
+          const format1 = JSON.parse(event.target.result);
+          const combinedData = {};
+
+          format1.forEach(entry => {
+            const { city, data } = entry;
+            const dataArray = Array.isArray(data) ? data : [data];
+
+            dataArray.forEach(item => {
+              if (Object.keys(item).length === 0) return;
+              const { id } = item;
+              if (!combinedData[id]) {
+                combinedData[id] = { id, city, ...item };
+              } else {
+                combinedData[id] = { ...combinedData[id], ...item };
+              }
+            });
+          });
+
+          const format2 = Object.values(combinedData).map((item, index) => ({
+            sr: index,
+            ...item
+          }));
+
+          output.textContent = JSON.stringify(format2, null, 2);
+        } catch (error) {
+          alert('Error parsing JSON: ' + error.message);
+        }
+      };
+
+      reader.onerror = () => {
+        alert('Error reading file');
+      };
+
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+</html>

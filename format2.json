@@ -1,0 +1,36 @@
+[
+    {
+        sr: 0,
+        id: 'AA01',
+        city: 'Mumbai',
+        name: 'Ankit',
+        age: 30
+    },
+    {
+        sr: 1,
+        id: 'AA02',
+        city: 'Mumbai',
+        name: 'Amit',
+        age: 40
+    },
+    {
+        sr: 2,
+        id: 'RR01',
+        city: 'Delhi',
+        name: 'Ram'
+    },
+    {
+        sr: 3,
+        id: 'RR02',
+        city: 'Delhi',
+        name: 'Rita',
+        age: 23
+    },
+    {
+        sr: 4,
+        id: 'SS01',
+        city: 'Pune',
+        name: 'Sejal'
+    }
+]
+

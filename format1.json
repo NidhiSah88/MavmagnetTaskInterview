@@ -1,0 +1,64 @@
+[
+    {
+      "city": "Mumbai",
+      "data": [
+        {
+          "id": "AA01",
+          "name": "Ankit"
+        },
+        {
+          "id": "AA02",
+          "name": "Amit"
+        }
+      ]
+    },
+    {
+      "city": "Mumbai",
+      "data": [
+        {
+          "id": "AA01",
+          "age": 30
+        },
+        {
+          "id": "AA02",
+          "age": 40
+        }
+      ]
+    },
+    {
+      "city": "Delhi",
+      "data": [
+        {
+          "id": "RR01",
+          "name": "Ram"
+        },
+        {
+          "id": "RR02",
+          "name": "Rita"
+        }
+      ]
+    },
+    {
+      "city": "Delhi",
+      "data": {
+        "id": "RR02",
+        "age": 23
+      }
+    },
+    {
+      "city": "Pune",
+      "data": {
+        "id": "SS01",
+        "name": "Sejal"
+      }
+    },
+    {
+      "city": "Pune",
+      "data": {}
+    },
+    {
+      "city": "Banglore",
+      "data": {}
+    }
+  ]
+  
