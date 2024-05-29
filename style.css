@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; 
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: gray;
+    align-items: center; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 385px;
+
+}
+
+.ev-category {
+    font-weight: bold;
+}
+
+.download-icon,
+.export-text,
+.tutorial-text,
+.user-icon {
+    margin-left: auto; 
+}
+
+.header-logo{
+    width: 55px;
+    height: 63px;
+}
+.download-icon {
+    width: 24px;
+    height: 24px;
+}
+.ask-logo{
+    width: 50px;
+    height: 35px;
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.hamburger-menu {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1440px) {
+    .header-content {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header-content.active {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .user-icon {
+        align-self: flex-end;
+    }
+}
